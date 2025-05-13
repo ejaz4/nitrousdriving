@@ -72,3 +72,32 @@ input {
 .contentSpan {
   width: var(--content-span);
 }
+
+.contentBleed {
+  width: var(--content-bleed);
+}
+
+@media screen and (max-width: 1300px) {
+  :root {
+    --content-bleed: 900px;
+  }
+}
+
+@media screen and (max-width: 1010px) {
+  :root {
+    --content-span: calc(100vw - 128px);
+    --content-bleed: calc(100vw - 128px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --content-span: calc(100vw - 64px);
+    --content-bleed: calc(100vw - 64px);
+  }
+
+  .app {
+    padding: 32px;
+    gap: 32px;
+  }
+}

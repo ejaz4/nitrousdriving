@@ -1,0 +1,15 @@
+.footer {
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}

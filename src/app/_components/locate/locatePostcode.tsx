@@ -1,11 +1,17 @@
 "use client";
 import { MapPinIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { isValid, parse } from "postcode";
 import { useEffect, useRef, useState } from "react";
 
-export const PostcodeEntry = () => {
+export const PostcodeEntry = ({
+  defaultValue = "",
+}: {
+  defaultValue?: string;
+}) => {
   const [error, setError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
 
   const queryPostcode = (postcode: string) => {
     console.log(postcode);
@@ -21,9 +27,15 @@ export const PostcodeEntry = () => {
       return;
     }
 
-    const { area, district, sector } = parsed;
+    if (!parsed.postcode) {
+      setError("Full postcode required");
+      return;
+    }
 
-    console.log(`District: ${district}`);
+    const { area, district, sector } = parsed;
+    console.log(parsed);
+
+    router.push(`/locate/${parsed.postcode.split(" ").join("")}`);
   };
 
   useEffect(() => {
@@ -55,6 +67,7 @@ export const PostcodeEntry = () => {
           onInput={(e) => {
             (e.target as HTMLInputElement).style.color = "black";
           }}
+          defaultValue={defaultValue}
           placeholder="Enter your postcode"
         />
       </form>
