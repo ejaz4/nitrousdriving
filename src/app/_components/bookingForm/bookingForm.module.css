@@ -29,3 +29,16 @@
   background-color: var(--body-color);
   color: var(--text-color);
 }
+
+.bookingForm button {
+  color: white;
+  font-size: 18px;
+  border: none;
+  background-color: rgba(131, 255, 131, 0.445);
+  padding: 12px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}

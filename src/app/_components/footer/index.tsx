@@ -1,5 +1,9 @@
 import { joinClasses } from "@/util/joinClasses";
 import styles from "./footer.module.css";
+import SnapchatLogo from "../logos/snapchat";
+import InstagramLogo from "../logos/instagram";
+import Link from "next/link";
+import TiktokLogo from "../logos/tiktok";
 
 export const Footer = () => {
   return (
@@ -9,7 +13,19 @@ export const Footer = () => {
           <p>© Nitrous Driving School</p>
         </div>
 
-        <div></div>
+        <div className={styles.social}>
+          <Link href={"https://www.snapchat.com/add/nitrousdriving"}>
+            <SnapchatLogo />
+          </Link>
+
+          <Link href={"https://www.instagram.com/nitrousdrivingschool"}>
+            <InstagramLogo />
+          </Link>
+
+          <Link href={"https://www.tiktok.com/@nitrousdrivingschool"}>
+            <TiktokLogo />
+          </Link>
+        </div>
       </div>
     </div>
   );

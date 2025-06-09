@@ -1,0 +1,11 @@
+.headlineImage {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.textArt {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}

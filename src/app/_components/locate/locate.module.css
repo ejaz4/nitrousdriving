@@ -28,6 +28,15 @@
   height: 274px;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+}
+
+.card p {
+  color: var(--text-color);
+  display: flex;
+  text-decoration: none !important;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card img {

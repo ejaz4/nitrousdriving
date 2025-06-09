@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import styles from "./locate.module.css";
 import goodmayes from "../../../assets/img/goodmayes.jpg";
 import barking from "../../../assets/img/barking.webp";
@@ -8,6 +8,7 @@ import canarywharf from "../../../assets/img/canarywharf.jpg";
 import thurrock from "../../../assets/img/thurrock.jpg";
 import React from "react";
 import { PostcodeEntry } from "./locatePostcode";
+import Link from "next/link";
 
 export const Locate = () => {
   return (
@@ -21,50 +22,54 @@ export const Locate = () => {
         <PostcodeEntry />
       </div>
 
-      <div className={styles.grid}>
-        <div className={styles.card}>
-          <Image src={goodmayes} alt="A picture of Goodmayes station" />
-          <div>
-            <p>Goodmayes</p>
-          </div>
-        </div>
-
-        <div className={styles.card}>
-          <Image
-            src={barking}
-            alt="A picture of an apartment complex watching River Roding in Barking"
-          />
-          <div>
-            <p>Barking</p>
-          </div>
-        </div>
-        <div className={styles.card}>
-          <Image src={dagenham} alt="A picture of Dagenham East station" />
-          <div>
-            <p>Dagenham</p>
-          </div>
-        </div>
-        <div className={styles.card}>
-          <Image src={towerhamlets} alt="A picture of Tower Hamlets" />
-          <div>
-            <p>Tower Hamlets</p>
-          </div>
-        </div>
-
-        <div className={styles.card}>
-          <Image src={canarywharf} alt="A picture of Canary Wharf" />
-          <div>
-            <p>Canary Wharf</p>
-          </div>
-        </div>
-
-        <div className={styles.card}>
-          <Image src={thurrock} alt="A picture of Lakeside, Thurrock" />
-          <div>
-            <p>Thurrock</p>
-          </div>
-        </div>
-      </div>
+      <LocationGrid />
     </div>
+  );
+};
+
+export const LocationGrid = ({ without }: { without?: string[] }) => {
+  const locations = [
+    { name: "Goodmayes", id: "goodmayes", image: goodmayes },
+    { name: "Barking", id: "barking", image: barking },
+    { name: "Dagenham", id: "dagenham", image: dagenham },
+    { name: "Tower Hamlets", id: "towerhamlets", image: towerhamlets },
+    { name: "Canary Wharf", id: "canarywharf", image: canarywharf },
+    { name: "Thurrock", id: "thurrock", image: thurrock },
+  ];
+
+  return (
+    <div className={styles.grid}>
+      {locations
+        .filter((location) => !without?.includes(location.id))
+        .map((location) => (
+          <Location
+            key={location.id}
+            name={location.name}
+            id={location.id}
+            image={location.image}
+          />
+        ))}
+    </div>
+  );
+};
+
+const Location = ({
+  name,
+  image,
+  id,
+}: {
+  name: string;
+  image: StaticImageData;
+  id: string;
+}) => {
+  return (
+    <Link className={styles.card} href={`/locations/${id}`}>
+      {/* <div> */}
+      <Image src={image} alt={name} />
+      <div>
+        <p>{name}</p>
+      </div>
+      {/* </div> */}
+    </Link>
   );
 };

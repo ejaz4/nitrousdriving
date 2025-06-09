@@ -2,6 +2,65 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: var(--content-span);
+}
+
+.header > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header > div:nth-child(1) {
+  justify-content: flex-start;
+}
+
+.header > div:nth-child(2) {
+  justify-content: center;
+}
+
+.header > div:nth-child(3) {
+  justify-content: flex-end;
+}
+
+.contactButton {
+  font-size: 18px;
+  padding: 12px;
+  gap: 8px;
+}
+
+.bookingFormBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.bookingForm {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bookingForm input,
+.bookingForm select {
+  background-color: transparent !important;
+  color: black !important;
+  border: solid 1px black !important;
+}
+
+.bookingForm button {
+  background-color: black !important;
+  color: white !important;
 }

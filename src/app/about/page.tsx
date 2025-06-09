@@ -1,19 +1,19 @@
 import React from "react";
 import { joinClasses } from "@/util/joinClasses";
 import styles from "./about.module.css";
-import carAtNight from "@/assets/img/gallery/IMG_2019.jpg";
+// import carAtNight from "@/assets/img/gallery/IMG_2019.jpg";
 import Image from "next/image";
 
 const AboutPage = () => {
   return (
     <div className={joinClasses("contentSpan", styles.mainContent)}>
       <h1>Learn to Drive with Confidence: Your Journey Starts Here 🌟</h1>
-      <Image
+      {/* <Image
         src={carAtNight}
         alt="Nitrous Driving School car at night time"
         width={undefined}
         height={undefined}
-      />
+      /> */}
       <h2>Established in 2006: Trusted Driving Instruction You Can Rely On</h2>
       <p>
         Since 2006, we've been proudly helping individuals learn to drive with

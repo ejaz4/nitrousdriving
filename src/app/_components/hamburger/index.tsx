@@ -50,9 +50,7 @@ export const Hamburger = ({
               <Logo />
             </Link>
           </div>
-          <div>
-            <button>hi</button>
-          </div>
+          <div>{/* <button>hi</button> */}</div>
         </div>
 
         <div
