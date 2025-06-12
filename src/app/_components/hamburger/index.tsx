@@ -18,11 +18,15 @@ export const Hamburger = ({
 
   useEffect(() => {
     if (!menuClosing) return;
+
+    const timer = setTimeout(() => {
+      setMenuOpen(false);
+    }, 1000); // Match the CSS transition duration
   }, [menuClosing]);
 
   useEffect(() => {
     console.log(pathname);
-    if (pathname > 2) {
+    if (pathname > 1) {
       setMenuClosing(true);
     }
   }, [pathname]);
@@ -60,7 +64,7 @@ export const Hamburger = ({
             menuClosing ? styles.closing : ""
           )}
         >
-          <Link
+          {/* <Link
             href={"/gallery"}
             onAnimationEndCapture={() => {
               if (menuClosing) {
@@ -69,7 +73,7 @@ export const Hamburger = ({
             }}
           >
             <h1>Gallery</h1>
-          </Link>
+          </Link> */}
 
           <div className={styles.entryContent}>
             <h1>Locations</h1>
@@ -96,17 +100,18 @@ export const Hamburger = ({
                 <Link href={"/locations/dagenham"}>
                   <p>Dagenham</p> <ChevronRightIcon size={16} />
                 </Link>
-                <Link href={"/locations/newham"}>
+
+                {/* <Link href={"/locations/newham"}>
                   <p>Newham</p>
                   <ChevronRightIcon size={16} />
-                </Link>
+                </Link> */}
 
-                <Link href={"/locations/tower-hamlets"}>
+                <Link href={"/locations/towerhamlets"}>
                   <p>Tower Hamlets</p>
                   <ChevronRightIcon size={16} />
                 </Link>
 
-                <Link href={"/locations/canary-wharf"}>
+                <Link href={"/locations/canarywharf"}>
                   <p>Canary Wharf</p>
                   <ChevronRightIcon size={16} />
                 </Link>
@@ -166,7 +171,7 @@ export const Hamburger = ({
             <h1>Legal</h1>
             <div className={styles.section}>
               <div className={styles.column}>
-                <Link href={"/legal/terms"}>
+                {/* <Link href={"/legal/terms"}>
                   <p>Terms of Service</p>
                   <ChevronRightIcon size={16} />
                 </Link>
@@ -174,7 +179,7 @@ export const Hamburger = ({
                 <Link href={"/legal/privacy"}>
                   <p>Privacy Policy</p>
                   <ChevronRightIcon size={16} />
-                </Link>
+                </Link> */}
 
                 <Link href={"/legal/booking"}>
                   <p>Booking and Cancellation Policy</p>

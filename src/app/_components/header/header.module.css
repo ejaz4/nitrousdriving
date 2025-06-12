@@ -27,6 +27,13 @@
   font-size: 18px;
   padding: 12px;
   gap: 8px;
+  background-color: rgba(25, 115, 199, 0.1);
+  color: rgba(25, 115, 199, 1);
+  border: none;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: center;
 }
 
 .bookingFormBackground {

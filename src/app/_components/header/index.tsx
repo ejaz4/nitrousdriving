@@ -1,15 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import style from "./header.module.css";
-import Logo from "../../../assets/svg/logo-original-scaled.svg";
+import Logo64 from "../../../assets/svg/logo-original-scaled.svg";
+import Logo48 from "../../../assets/svg/logo-original-48.svg";
+import Whatsapp from "../../../assets/svg/whatsapp-blue.svg";
 import { MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { Hamburger } from "../hamburger";
 import { BookingForm } from "../bookingForm";
+import { useMediaQuery } from "@/util/useMediaQuery";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  const isMobile = useMediaQuery(768);
 
   return (
     <>
@@ -21,7 +25,8 @@ export const Header = () => {
         </div>
         <div className="centre">
           <Link href={"/"}>
-            <Logo />
+            {!isMobile && <Logo64 />}
+            {isMobile && <Logo48 />}
           </Link>
         </div>
         <div className="right">
@@ -29,7 +34,8 @@ export const Header = () => {
             onClick={() => setContactOpen(true)}
             className={style.contactButton}
           >
-            <p>Contact</p>
+            <Whatsapp />
+            {!isMobile && <p>Contact</p>}
           </button>
         </div>
       </div>

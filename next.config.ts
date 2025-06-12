@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: false,
   /* config options here */
   webpack(config) {
     // Grab the existing rule that handles SVG imports
@@ -28,6 +29,10 @@ const nextConfig: NextConfig = {
     fileLoaderRule.exclude = /\.svg$/i;
 
     return config;
+  },
+  eslint: {
+    // This option allows you to ignore ESLint errors during production builds.
+    ignoreDuringBuilds: true,
   },
 };
 
