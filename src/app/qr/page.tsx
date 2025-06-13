@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 
 const QRRedirect = () => {
-  return redirect("https://g.co/kgs/8wjnGqw");
+  return redirect("https://g.page/r/CYBsCIHzUlZ_EBM/review");
 };
 
 export default QRRedirect;
