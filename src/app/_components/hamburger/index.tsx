@@ -75,6 +75,18 @@ export const Hamburger = ({
             <h1>Gallery</h1>
           </Link> */}
 
+          <Link
+            href={"/pricing"}
+            onAnimationEndCapture={() => {
+              if (menuClosing) {
+                setMenuOpen(false);
+              }
+            }}
+          >
+            <h1>Pricing</h1>
+            <ChevronRightIcon size={24} />
+          </Link>
+
           <div className={styles.entryContent}>
             <h1>Locations</h1>
             <div className={styles.section}>

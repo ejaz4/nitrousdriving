@@ -1,0 +1,25 @@
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+}
+
+.mainContent img {
+  width: 100%;
+  height: fit-content;
+}
+
+.mainContent table {
+  width: 100%;
+  border-collapse: collapse;
+  border: solid 1px white;
+  text-align: center;
+}
+
+.mainContent table th,
+.mainContent table td {
+  padding: 16px;
+  border: solid 1px white;
+}

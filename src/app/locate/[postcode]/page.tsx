@@ -7,6 +7,7 @@ import styles from "./postcode.module.css";
 import { CheckIcon, CrossIcon, XIcon } from "lucide-react";
 import { joinClasses } from "@/util/joinClasses";
 import { BookingForm } from "@/app/_components/bookingForm";
+import Link from "next/link";
 
 const PostcodeCheckPage = () => {
   const params = useParams() as { postcode: string };
@@ -55,6 +56,9 @@ const PostcodeCheckPage = () => {
           <h2>
             Nitrous Driving School serves your area at {postcodeFormatted}
           </h2>
+          <p>
+            Check <Link href={"/pricing"}>pricing</Link> on the pricing page
+          </p>
           <p>Get in contact to make a booking.</p>
           <BookingForm postcode={postcodeFormatted} />
         </div>
